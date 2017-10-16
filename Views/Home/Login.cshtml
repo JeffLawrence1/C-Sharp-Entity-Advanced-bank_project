@@ -1,0 +1,24 @@
+<h1>Login:</h1>
+@{
+    if (TempData["Error"] != null)
+    {
+<p>@TempData["Error"]</p>
+    }
+}
+
+
+<form action="Login" method="post">
+
+    <label for="Email">Email:</label>
+    <input style="margin-left: 75px;" name="Email" type="text"/>
+    <br>
+    <br>
+
+    <label for="Password">Password:</label>
+    <input style="margin-left: 50px;" name="Password" type="password"/>
+    <br>
+    <br>
+    <button style="margin-left: 115px;" type="submit">Login</button>
+</form>
+
+<a href="Reg">Need to Register?</a>

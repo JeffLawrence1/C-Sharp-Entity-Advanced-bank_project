@@ -1,0 +1,44 @@
+@model bank_project.Models.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Register:</h1>
+
+
+<form asp-controller="Home" asp-action="Register" method="post">
+    
+    <span asp-validation-for="FirstName"></span>
+    <br>
+    <label asp-for="FirstName"></label>
+    <input style="margin-left: 50px;" asp-for="FirstName"/>
+    <br>
+    <br>
+    <span asp-validation-for="LastName"></span>
+    <br>
+    <label asp-for="LastName"></label>
+    <input style="margin-left: 50px;" asp-for="LastName"/>
+    <br>
+    <br>
+    <span asp-validation-for="Email"></span>
+    <br>
+    <label asp-for="Email"></label>
+    <input style="margin-left: 75px;" asp-for="Email"/>
+    <br>
+    <br>
+    <span asp-validation-for="Password"></span>
+    <br>
+    <label asp-for="Password"></label>
+    <input style="margin-left: 50px;" asp-for="Password"/>
+    <br>
+    <br>
+    <span asp-validation-for="Confirm"></span>
+    <br>
+    <label asp-for="Confirm"></label>
+    <input style="margin-left: 50px;" asp-for="Confirm"/>
+    <br>
+    <br>
+    <button style="margin-left: 115px;" type="submit">Create new User</button>
+</form>
+
+<a href="/">Already Registered?</a>

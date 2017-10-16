@@ -1,0 +1,40 @@
+<h1>Welcome, @ViewBag.info.FirstName &emsp;&emsp;&emsp;&emsp;&emsp; Balance: @ViewBag.info.Balance</h1>
+<p style="margin-left: 450px;"><a href="/logout">Logout</a></p>
+<h2>Deposit/Withdraw</h2>
+@{
+    if (TempData["Error"] != null)
+    {
+        <p>@TempData["Error"]</p>
+    }
+}
+<form action="/Withdraw" method="post">
+
+    <label for="Amount"></label>
+    <select name="type">
+        <option value="deposit">Deposit</option>
+        <option value="withdraw">Withdraw</option>
+    </select>
+    <input style="margin-left: 75px;" name="Amount" type="text"/>
+
+    <button style="margin-left: 115px;" type="submit">Submit</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+@{
+    foreach(var x in ViewBag.info.Withdrawals)
+    {
+        <tr>
+            <td>$@x.Amount</td>
+            <td>@x.createdat.ToString("MMM dd yyyy h:mm tt")</td>
+        </tr>
+    }
+}
+    </tbody>
+</table>
